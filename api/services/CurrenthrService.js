@@ -4,19 +4,12 @@ module.exports = {
          * @return json
          * returns Gets authenticated user profile
          */
-        getMyInfo: function(headers, parameters, callback) {
-                var url = 'https://' +parameters.regionId+sails.config.wowpvpstats.baseUrl+parameters.serverId+ '/' +parameters.characterId+sails.config.wowpvpstats.appId;            
+        getMyInfo: function(headers, parameters, callback) {         
 				
 				var params = [		
 					{
-						id:parameters.regionId			
-					},						
-					{
-						id:parameters.serverId			
-					},
-					{
-						id:parameters.characterId					
-					}									
+						id:parameters.currentHr			
+					}								
 				];
 
 				var postHeader={
@@ -24,6 +17,6 @@ module.exports = {
 					'Accept':'application/json',
 					'Authorization':headers.authorization // pass authorization header received in request
                 };
-                RequestService.getData(url, postHeader, params, callback);
+                RequestService.getData(postHeader, params, callback);
         },
 }
