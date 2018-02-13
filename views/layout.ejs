@@ -23,8 +23,8 @@
 		
 		var qs = QueryStringToJSON();
 
-		document.body.innerText = '{ "frames": ['+JSON.stringify(qs)+']}';
-				
+		document.body.innerHTML = '{"frames":['+JSON.stringify(qs)+']}';
+
 	</script>
 </body>
 </html>
