@@ -6,14 +6,15 @@
  */
 
 module.exports = {
-        currenthr : function(req, res) {                
+        myhr : function(req, res) {                
                
                 console.log("Query Parameters: ", req.query);
+
                 CurrenthrService.getMyInfo(req.headers, req.query, function(err, response, data) {
                         if (err) {
                                 return res.send(err)
                         };
-						
+                        
                         // Building object for LaMetric. We will return it
                     
                         var responseObj={};
@@ -21,33 +22,29 @@ module.exports = {
                         responseObj.frames=[];
                     
                         var frame0 = {
-                            'text': 'stats for:',
-                            'icon':'i15434',
-                            'index': 0
-                        };
-                                                                                                                              
+                                'text': 'textframe',
+                                'icon':'i14665',
+                                'index':0
+                        };                                                                                                             
 
-                        // Checking if we have a number in the parameter. 
-                        if (req.query.currentHr === '') {
-                            frame1.text = 'INSERT', 
-                            frame2.text = 'DATA'
-                        }   
+                        //if (req.query.currentHr === '' || req.query.currentHr === undefined) {
+                        //    frame0.text = 'EMPTY'
+                        //}   
                     
-                        else{
-                        // Putting the number in the textfield.
-                            frame0.text = params.currentHr;    
-                        }       
+                        //else{
+                        //    frame0.text = req.query.currentHr;  
+                        //} 
                         
                         responseObj.frames.push(frame0);
-					
-                        if (!data) {
+                    
+                        //if (!data) {
                             console.log("Error: ", response.statusCode);
-                            res.status(response.statusCode).send(response.body);
-                        } else {
+                        //    res.status(response.statusCode).send(response.body);
+                        //} else {
                             console.log("Response: ", responseObj);
                             return res.status(200).json(responseObj);
-                        }					
-					
+                        //}                   
+                    
                 })
         },
 };

@@ -8,11 +8,11 @@ module.exports = {
         getData: function(url, header, queryParams, callback) {
                 console.log("GET: ", url);
                 console.log("QS: ", queryParams);
-                console.log("Headers: ", header);		
-		
+                console.log("Headers: ", header);       
+        
                 request.get({
                         url: url,
-						qs: queryParams,
+                        qs: queryParams,
                         headers: header,
                         rejectUnauthorized: true,
                 }, function(error, response, body) {

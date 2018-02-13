@@ -4,12 +4,13 @@ module.exports = {
          * @return json
          * returns Gets authenticated user profile
          */
-        getMyInfo: function(headers, parameters, callback) {         
+        getMyInfo: function(headers, parameters, callback) {
+                var url = sails.config.currenthr.baseUrl+parameters.currentHr;            
 				
 				var params = [		
 					{
 						id:parameters.currentHr			
-					}								
+					}						
 				];
 
 				var postHeader={
@@ -17,6 +18,6 @@ module.exports = {
 					'Accept':'application/json',
 					'Authorization':headers.authorization // pass authorization header received in request
                 };
-                RequestService.getData(postHeader, params, callback);
+                RequestService.getData(url, postHeader, params, callback);
         },
 }
