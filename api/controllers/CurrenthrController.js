@@ -27,13 +27,13 @@ module.exports = {
                                 'index':0
                         };                                                                                                             
 
-                        //if (req.query.currentHr === '' || req.query.currentHr === undefined) {
-                        //    frame0.text = 'EMPTY'
-                        //}   
+                        if (req.query.currentHr === '' || req.query.currentHr === undefined) {
+                            frame0.text = 'EMPTY'
+                        }   
                     
-                        //else{
-                        //    frame0.text = req.query.currentHr;  
-                        //} 
+                        else{
+                            frame0.text = req.query.currentHr;  
+                        } 
                         
                         responseObj.frames.push(frame0);
                     
