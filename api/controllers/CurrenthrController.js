@@ -23,7 +23,7 @@ module.exports = {
                     
                         var frame0 = {
                                 'text': 'textframe',
-                                'icon':'i14665',
+                                'icon':'i15434',
                                 'index':0
                         };                                                                                                             
 
@@ -32,7 +32,7 @@ module.exports = {
                         }   
                     
                         else{
-                            frame0.text = req.query.currentHr;  
+                            frame0.text = 'HR: '+req.query.currentHr;  
                         } 
                         
                         responseObj.frames.push(frame0);
